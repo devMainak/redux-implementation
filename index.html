@@ -18,15 +18,17 @@
   <main>
     <section>
       <h1>Add Profile</h1>
+      <form id="userProfileForm">
       <input type="number" id="profileId" placeholder="ID"/>
       <input type="text" id="profileName" placeholder="Name"/>
       <input type="number" id="profileAge" placeholder="Age"/>
-      <button>Add Profile</button>
+      <button type="submit">Add Profile</button>
+        </form>
     </section>
     <section>
       <h1>Remove Profile</h1>
       <input type="number" id="removeProfileId" placeholder="ID"/>
-      <button>Remove Profile</button>
+      <button id="removeProfileBtn">Remove Profile</button>
     </section>
     <section>
       <ul id="userProfileList"></ul>

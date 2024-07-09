@@ -1,3 +1,4 @@
+import { ADD_PROFILE, REMOVE_PROFILE, CALCULATE_AVERAGE_AGE } from './actions'
 const initialState = {profiles: [], averageAge: 0}
 
 const profileReducer = (state = initialState, action) => {
@@ -8,7 +9,11 @@ const profileReducer = (state = initialState, action) => {
       case REMOVE_PROFILE:
         return {...state, profiles: state.profiles.filter(profile => profile.id != action.payload)}
       case CALCULATE_AVERAGE_AGE:
-        return {...state, averageAge: state.profiles.length > 0 ? state.profiles.reduce((acc, curr) => acc += curr.age, 0) / state.profiles.length : 0}
+        return {...state, averageAge:  state.profiles.length > 0 ? (state.profiles.reduce((acc, curr) => {
+          acc += curr.age
+          console.log(acc)
+          return acc
+        }, 0) / state.profiles.length) : 0}
       default: 
         return state
     }
